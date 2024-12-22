@@ -3,6 +3,7 @@ const app = express();
 const Port = 8080;
 
 app.set("view engine","ejs");
+app.use(express.static(Path.join(__dirname,"public")))
 
 
 
