@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const Port = 8080;
 
@@ -8,6 +9,15 @@ app.set("view engine","ejs");
 app.get('/',(req,res)=>{
     res.render("home")
 })
+app.use(express.static(path.join(__dirname,"public")))
+
+app.get("/signin",function(req,res){
+    res.render("signin");
+});
+
+app.get("/login",function(req,res){
+    res.render("login");
+});
 
 app.listen(Port,(err)=>{
     if(err){
