@@ -14,6 +14,14 @@ app.get("/login",function(req,res){
     res.render("login");
 });
 
+app.get("/create-post",function(req,res){
+    res.render("create-post");
+});
+
+app.get("/post",function(req,res){
+    res.render("post");
+});
+
 app.listen(Port,(err)=>{
     if(err){
         throw Error;
