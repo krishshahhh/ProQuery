@@ -1,18 +1,24 @@
+const { log } = require("console");
 const express = require("express");
 const path = require("path");
 const app = express();
 const Port = 8080;
 
 app.set("view engine","ejs");
-// app.use(express.static(path.join(__dirname,"public")))
+app.set(express.static(path.join(__dirname,"public")))
+app.use(express.urlencoded({extended:true}))
 
-app.get('/',(req,res)=>{
+app.get('/home',(req,res)=>{
     res.render("home")
 })
-app.use(express.static(path.join(__dirname,"public")))
+
+let users = [];
+
 
 app.get("/signin",function(req,res){
+    
     res.render("signin");
+    console.log(info);
 });
 
 app.get("/login",function(req,res){
