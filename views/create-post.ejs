@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class=" flext justify-center  w-3/5 h-96 bg-zinc-200 p-10 m-10 ">
-    <h1 class=" text-2xl ml-20" >Create Post</h1>
-    <form action="post" class="ml-10 ">
-        <input class="px-5 py-2 bg-transparent border-2 border-zinc-800 outline-none rounded-lg mt-5" placeholder="Enter your Username" type="text" name="username">
-       <br>
-       <textarea class="w-2xl"> </textarea>
-      <br>
-        <input class="  px-5 py-2 bg-transparent border-2 border-zinc-800 outline-none rounded-lg mt-3" placeholder="Upload image" type="file" name="image" accept="image/*">
-       <br>
-        <input type="submit" class="px-5 py-2 bg-blue-600 rounded-lg ml-12 mt-3" value="Create post">
-    </form>
 
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-4/5 md:w-2/3 lg:w-1/3 bg-white shadow-lg rounded-lg p-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Create Post</h1>
+        <form method="POST" action="/posts" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-600 mb-1">Username</label>
+                <input id="username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400" placeholder="Enter your username" required type="text" name="username">
+            </div>
+            <div>
+                <label for="content" class="block text-sm font-medium text-gray-600 mb-1">Content</label>
+                <textarea id="content" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400 resize-none" placeholder="Write your content" required name="Content"></textarea>
+            </div>
+            <div>
+                <label for="image" class="block text-sm font-medium text-gray-600 mb-1">Upload Image</label>
+                <input id="image" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400 file:bg-transparent file:py-2 file:px-4 file:border-0 file:rounded file:text-blue-600 file:cursor-pointer" type="file" name="image" accept="image/*">
+            </div>
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition duration-300">Submit</button>
+        </form>
     </div>
 </body>
+
 </html>

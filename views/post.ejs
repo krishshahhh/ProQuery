@@ -6,17 +6,32 @@
     <title>Post</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="w-full h-full bg=zinc=900 p-10"></div>
-    <h1 class="text-3xl tracking-tighter mb-3">All Posts</h1>
+<body class="bg-gray-100 p-4">
 
-    <div class="Posts">
-        <div class="Posts max-w-72 p-2 bg-zinc-800 rounded-lg">
+    <!-- Header Section -->
+    <header class="mb-8">
+        <h1 class="text-blue-900 text-3xl font-bold text-center">ProQuery</h1>
+    </header>
 
-            <div class="w-ful h-72 bg-blue-500"></div>
-        </div>
-    </div>
+    <!-- Posts Section -->
+    <section class="posts max-w-4xl mx-auto">
+        <% for (let p of posts) { %>
+            <article class="bg-white shadow-lg rounded-lg p-6 my-6 border border-gray-200 transition hover:shadow-xl hover:border-gray-300">
+                <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-gray-900">
+                        <h3>@<%= p.username %></h3>
+                    </div>
+                    <div>
+                        <button class="text-sm text-red-500 hover:text-red-700 font-medium transition">Delete Post</button>
+                    </div>
+                </div>
+                <div class="mt-4 text-gray-700">
+                    <p class="whitespace-pre-wrap"><%= p.Content %></p>
+                </div>
+            </article>
+        <% } %>
+    </section>
     
-    
+
 </body>
 </html>
