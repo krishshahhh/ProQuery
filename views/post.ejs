@@ -15,19 +15,20 @@
 
     <!-- Posts Section -->
     <section class="posts max-w-4xl mx-auto">
-        <% for (let p of posts) { %>
+        <% for (let post of posts) { %>
             <article class="bg-white shadow-lg rounded-lg p-6 my-6 border border-gray-200 transition hover:shadow-xl hover:border-gray-300">
                 <div class="flex items-center justify-between">
                     <div class="text-lg font-bold text-gray-900">
-                        <h3>@<%= p.username %></h3>
+                        <h3>@<%= post.username %></h3>
                     </div>
                     <div>
                         <button class="text-sm text-red-500 hover:text-red-700 font-medium transition">Delete Post</button>
                     </div>
                 </div>
                 <div class="mt-4 text-gray-700">
-                    <p class="whitespace-pre-wrap"><%= p.Content %></p>
+                    <p class="whitespace-pre-wrap"><%= post.Content %></p>
                 </div>
+                <a href="http://localhost:8080/posts/<%= post.id %>">see post</a>
             </article>
         <% } %>
     </section>
